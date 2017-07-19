@@ -8,7 +8,8 @@ pipeline {
     }
     stage('build') {
       steps {
-        build 'FIXation-tags'
+        build job: 'FIXation-CentOS7', parameters: [[$class: 'ListSubversionTagsParameterValue', name: 'SVN_TAG', tag: 'trunk', tagsDir: 'svn://infra.fluent.local/jcfx']]
+        //build 'FIXation-tags'
         error 'build failed'
       }
     }
