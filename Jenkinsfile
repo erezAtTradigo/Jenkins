@@ -8,9 +8,8 @@ pipeline {
     }
     stage('build') {
       steps {
-        build(job: 'FIXation-tags', propagate: true)
+        build 'FIXation-tags'
         error 'build failed'
-        node(label: 'uat1')
       }
     }
   }
