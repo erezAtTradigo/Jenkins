@@ -4,7 +4,6 @@ pipeline {
     stage('init') {
       steps {
         echo 'test init pipeline'
-        build 'FIXation-Env'
       }
     }
     stage('build') {
